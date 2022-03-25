@@ -15,14 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from django.views.debug import default_urlconf
+from django.urls import path, re_path, include
 import app.views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', app.views.index, name='index'),
-    path('add', app.views.add, name='add'),
-    path('view/<str:id>', app.views.view, name='view'),
-    path('edit/<str:id>', app.views.edit, name='edit'),
+    re_path(r'^$', default_urlconf),
+    path('app/', include ('app.urls')),
 ]
