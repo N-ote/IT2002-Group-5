@@ -1,0 +1,121 @@
+
+<html>
+
+	<head>
+		<title> RentBuddy! </title>
+	</head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #000000;
+  text-align: left;
+  padding: 2px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<body style="margin:50;padding:50">
+
+<div id="clockbox" style="font:12pt TimesNewRoman; color:#FF4500; text-align:right"></div>
+<script type="text/javascript">
+var tday=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+var tmonth=["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+function GetClock(){
+var d=new Date();
+var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getFullYear();
+var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
+
+if(nhour==0){ap=" AM";nhour=12;}
+else if(nhour<12){ap=" AM";}
+else if(nhour==12){ap=" PM";}
+else if(nhour>12){ap=" PM";nhour-=12;}
+
+if(nmin<=9) nmin="0"+nmin;
+if(nsec<=9) nsec="0"+nsec;
+
+var clocktext=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
+document.getElementById('clockbox').innerHTML=clocktext;
+}
+
+GetClock();
+setInterval(GetClock,1000);
+</script>
+<br>
+<form method = "POST" action = "logout"> {%csrf_token%} <button type="submit">Logout</button> </form> 
+<a href = 'settings.html'> Click here to become a buddy! Or update your settings. </a>
+
+</br>
+<h2 style = "color:rgba(400,133,0); font:20pt;text-align:center"> RentBuddy :)</h2>
+	{{logout_success}}
+	<body>
+	
+	{% for rows in records %}
+	<p> Welcome back, {{rows.2}} </p>
+	<p>Here's your account information as of now:</p>
+<table border = "1">
+<tr>
+<td> Email Address </td>
+<td> Name </td>
+<td> Age </td>
+<td> Gender </td>
+<td> Vaccination Status </td>
+<td> Rating </td>
+<td> Number of times you have been rated </td> </tr>
+<tr> 
+	<td> {{rows.0}} </td>
+	<td> {{rows.2}} </td>
+	<td> {{rows.3}} </td> 
+	<td> {{rows.4}} </td> 
+	<td> {{rows.5}} </td> 
+	<td> {{rows.6}} </td>
+	<td> {{rows.7}} </td>
+{% endfor %} 
+</tr> <br> </table> <br>
+
+	<p> Check out our buddies :) </p>
+	
+		<p> Search by the buddy's name: [sorted by alphabetical order ascendingly]</p>
+		<form method = "GET" action = "result"> <!-- This means after we click submit, will go to another page called result with the get mehtod -->
+			<input type = "text" name = "name"/>
+			<input type = "submit" value = "search buddy name">
+		</form>
+		
+		<p> Search by the buddy's hourly rate: [sorted based on cheapest price]</p>
+		<form method = "GET" action = "result"> <!-- This means after we click submit, will go to another page called result with the get mehtod -->
+			<input type = "text" name = "price"/>
+			<input type = "submit" value = "search hourly rate">
+		</form>
+
+		<p> Search by buddy's preference: [sorted by genre alphabetically ascendingly]  </p>
+		<form method = "GET" action = "result"> <!-- This means after we click submit, will go to another page called result with the get mehtod -->
+			<input type = "text" name = "genre"/>
+			<input type = "submit" value = "search preference">
+		</form>
+
+		<p> Note, if you want to search multiple genre (not recommended), you need to : </p>
+		<ul>
+  			<li>sort them alphabetically, for example 'Running|Cooking'</li>
+  			<li> You would need to separate it by a | sign (no space) </li> </ul>
+
+<br>
+
+<p> Want to express your gratitude or misery in your experience? Do rate your buddy! Hope your 1st date went well :D [1 to 5] </p>
+<form method="POST" action="rate.html"> {% csrf_token %}
+<input type="text" placeholder= "Who do you want to rate? (email)" name="email" required><br>
+<input type="number" placeholder= "What's the rating? (1-5)" name="rating" required><br>
+    			<input type="submit" value="Rate this person!"> </form>			
+			<font color = 'red'> {{email}} <br>
+			<font color = 'red'> {{rate}} <br>
+			{{err}}
+
+	</body>
+</html>
+
