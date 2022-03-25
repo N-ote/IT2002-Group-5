@@ -1,0 +1,356 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<!-- ***** Welcome Area Start ***** -->
+  <section class="welcome-area">
+    <!-- Welcome Slides -->
+    <div class="welcome-slides owl-carousel">
+      <!-- Single Welcome Slide -->
+      <div class="welcome-welcome-slide bg-img bg-gradient-overlay jarallax" style="background-image: url({% static 'websiteimg/bg-img/1_1.jpg' %});">
+        <div class="container h-100">
+          <div class="row h-100 align-items-center">
+            <div class="col-12">
+              <!-- Welcome Text -->
+              <div class="welcome-text text-center">
+                <h2 data-animation="fadeInUp" data-delay="100ms">Welcome to RentBuddy!</h2>
+                <p data-animation="fadeInUp" data-delay="300ms">As a startup innovator, RentBuddy is exploring exciting new opportunities for you to find your best match!</p>
+                <div class="welcome-btn-group">
+                  <a href="{% url 'contact' %}" class="btn dento-btn mx-2 active" data-animation="fadeInUp" data-delay="700ms">Contact Us</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Single Welcome Slide: 2nd Animation page -->
+      <div class="welcome-welcome-slide bg-img bg-gradient-overlay jarallax" style="background-image: url({% static 'website/img/bg-img/2_1.jpg' %});">
+        <div class="container h-100">
+          <div class="row h-100 align-items-center">
+            <div class="col-12">
+              <!-- Welcome Text -->
+              <div class="welcome-text text-center">
+                <h2 data-animation="fadeInDown" data-delay="100ms">Welcome to RentBuddy!</h2>
+                <p data-animation="fadeInDown" data-delay="300ms">As a startup innovator, RentBuddy is exploring exciting new opportunities for you to find your best match!</p>
+                <div class="welcome-btn-group">
+                  <a href="#" class="btn dento-btn mx-2" data-animation="fadeInDown" data-delay="500ms">Get Started</a>
+                  <a href="#" class="btn dento-btn mx-2 active" data-animation="fadeInDown" data-delay="700ms">Contact Us</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ***** Welcome Area End ***** -->
+
+  <!-- ****** About Us Area Start ******* -->
+  <section class="dento-about-us-area section-padding-100-0">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- About Us Thumbnail -->
+        <div class="col-10 col-md-6">
+          <div class="about-us-thumbnail mb-50">
+            <img src="{% static 'website/img/bg-img/15_1.jpg' %}" alt="">
+          </div>
+        </div>
+        <!-- About Content -->
+        <div class="col-12 col-md-6">
+          <div class="about-us-content mb-50">
+            <!-- Section Heading -->
+            <div class="section-heading">
+              <h2>About Us</h2>
+              <div class="line"></div>
+            </div>
+            <p> RentBuddy is a tight team with the aim of providing you with great experience gaining connections or making new friends through personalisation
+              of buddy profiles that suits you the most. </p>
+
+            <!-- Single Skills Area -->
+            <div class="single-skills-area mt-30">
+              <h6>Experience Co-founders</h6>
+              <div id="bar1" class="barfiller">
+                <span class="tip"></span>
+                <span class="fill" data-percentage="80"></span>
+              </div>
+            </div>
+
+            <!-- Single Skills Area -->
+            <div class="single-skills-area mt-30">
+              <h6>Latest Technology</h6>
+              <div id="bar2" class="barfiller">
+                <span class="tip"></span>
+                <span class="fill" data-percentage="70"></span>
+              </div>
+            </div>
+
+            <!-- Single Skills Area -->
+            <div class="single-skills-area mt-30">
+              <h6>Customized Needs</h6>
+              <div id="bar3" class="barfiller">
+                <span class="tip"></span>
+                <span class="fill" data-percentage="85"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ****** About Us Area End ****** -->
+
+  <div class="container">
+    <div class="dento-border clearfix"></div>
+  </div>
+
+  <!-- Cool Facts Area Start -->
+  <section class="dento-cta-area">
+    <div class="container">
+      <div class="row">
+        <!-- Cool Facts Area -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="single-cta text-center mt-50 mb-100">
+            <i class="icon_genius"></i>
+            <h2><span class="counter">2</span></h2>
+            <h5>Years Of Experience</h5>
+          </div>
+        </div>
+
+        <!-- Cool Facts Area -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="single-cta text-center mt-50 mb-100">
+            <i class="icon_heart_alt"></i>
+            <h2><span class="counter">50</span>+</h2>
+            <h5>Number of Successful Client-Buddy Match</h5>
+          </div>
+        </div>
+
+        <!-- Cool Facts Area -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="single-cta text-center mt-50 mb-100">
+            <i class="icon_book_alt"></i>
+            <h2><span class="counter">5</span></h2>
+            <h5>Awards</h5>
+          </div>
+        </div>
+
+        <!-- Cool Facts Area -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="single-cta text-center mt-50 mb-100">
+            <i class="icon_id"></i>
+            <h2><span class="counter">12</span>+</h2>
+            <h5>License</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Cool Facts Area End -->
+
+  <!-- Rent Buddy Service Area Start -->
+  <section class="dento-service-area section-padding-100-0 bg-img bg-gradient-overlay jarallax clearfix" style="background-image: url({% static 'website/img/bg-img/13_1.png' %});">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Service Content -->
+        <div class="col-12 col-lg-6">
+          <div class="service-content mb-30">
+            <!-- Section Heading -->
+            <div class="section-heading white">
+              <h2>What you can expect</h2>
+              <div class="line"></div>
+            </div>
+
+            <div class="row">
+              <!-- Single Service -->
+              <div class="col-6 col-md-4">
+                <div class="single-service mb-70">
+                  <img src="{% static 'website/img/core-img/s1.png' %}" alt="">
+                  <h6>People with similar interests</h6>
+                </div>
+              </div>
+
+              <!-- Single Service -->
+              <div class="col-6 col-md-4">
+                <div class="single-service mb-70">
+                  <img src="{% static 'website/img/core-img/s2.png' %}" alt="">
+                  <h6>Built-In Chatbox</h6>
+                </div>
+              </div>
+
+              <!-- Single Service -->
+              <div class="col-6 col-md-4">
+                <div class="single-service mb-70">
+                  <img src="{% static 'website/img/core-img/s3.png' %}" alt="">
+                  <h6>Buddy-Client Ratings</h6>
+                </div>
+              </div>
+
+              <!-- Single Service -->
+              <div class="col-6 col-md-4">
+                <div class="single-service mb-70">
+                  <img src="{% static 'website/img/core-img/s4.png' %}" alt="">
+                  <h6>Buddy-Client Reviews</h6>
+                </div>
+              </div>
+
+              <!-- Single Service -->
+              <div class="col-6 col-md-4">
+                <div class="single-service mb-70">
+                  <img src="{% static 'website/img/core-img/s5.png' %}" alt="">
+                  <h6>Arrange Meet-Ups</h6>
+                </div>
+              </div>
+
+              <!-- Single Service -->
+              <div class="col-6 col-md-4">
+                <div class="single-service mb-70">
+                  <img src="{% static 'website/img/core-img/s1.png' %}" alt="">
+                  <h6>Earn Money</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Area -->
+        <div class="col-12 col-lg-6">
+          <div class="dento-video-area mb-100">s
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Jag6iyrSjsI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Rent Buddy Service Area End -->
+
+
+  <!-- ***** Our Team Area Start ***** -->
+  <section class="dentist-area section-padding-100-0">
+    <div class="container">
+      <div class="row">
+        <!-- Section Heading -->
+        <div class="col-12">
+          <div class="section-heading text-center">
+            <h2>Our Team</h2>
+            <div class="line"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Single Dentist Area -->
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="single-dentist-area mb-100">
+            <img src="{% static 'website/img/bg-img/9_1.png' %}" alt="">
+            <!-- Dentist Content -->
+            <div class="dentist-content">
+              <!-- Social Info -->
+              <div class="dentist-social-info">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>
+              </div>
+              <!-- Dentist Info -->
+              <div class="dentist-info bg-gradient-overlay">
+                <h5>Jeffrey</h5>
+                <p>Tech Lead</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single Dentist Area -->
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="single-dentist-area mb-100">
+            <img src="{% static 'website/img/bg-img/10_1.png' %}" alt="">
+            <!-- Dentist Content -->
+            <div class="dentist-content">
+              <!-- Social Info -->
+              <div class="dentist-social-info">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>
+              </div>
+              <!-- Dentist Info -->
+              <div class="dentist-info bg-gradient-overlay">
+                <h5>Michelle</h5>
+                <p>Marketing Lead</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single Dentist Area -->
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="single-dentist-area mb-100">
+            <img src="{% static 'website/img/bg-img/11_1.png' %}" alt="">
+            <!-- Dentist Content -->
+            <div class="dentist-content">
+              <!-- Social Info -->
+              <div class="dentist-social-info">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>
+              </div>
+              <!-- Dentist Info -->
+              <div class="dentist-info bg-gradient-overlay">
+                <h5>Jane</h5>
+                <p>Design Lead</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ***** Our Team Area End ***** -->
+
+  <!-- ***** Testimonials Area Start ***** -->
+  <section class="testimonials-area section-padding-100 bg-img bg-gradient-overlay jarallax clearfix" style="background-image: url({% static 'website/img/bg-img/7_1.jpg' %});">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <!-- Testimonials Slides -->
+          <div class="testimonials-slides owl-carousel">
+            <!-- Single Testimonials Slide -->
+            <div class="single-testimonial-slide d-flex align-items-center">
+              <!-- Thumbnail -->
+              <div class="testimonial-thumb">
+                <img src="{% static 'website/img/bg-img/8.jpg' %}" alt="">
+              </div>
+              <!-- Content -->
+              <div class="testimonial-content">
+                <h5>“I was once skeptical about making friends through online platforms. But after trying Rent Buddy as a client, I actually found someone that was able to
+                  click with me after hanging out together for some time.”</h5>
+                <h6>Arron Ramsey</h6>
+                <p>Client</p>
+              </div>
+            </div>
+
+            <!-- Single Testimonials Slide -->
+            <div class="single-testimonial-slide d-flex align-items-center">
+              <!-- Thumbnail -->
+              <div class="testimonial-thumb">
+                <img src="{% static 'website/img/bg-img/8_1.jpg' %}" alt="">
+              </div>
+              <!-- Content -->
+              <div class="testimonial-content">
+                <h5>“I have been avoiding using online platforms to make friends for years due to bad experiences I encountered previously. However, Rent Buddy is geared towards attracting people 
+                  who purely wants to people with common interests, which is reassuring to those that are afraid of meeting people with dating intentions. I am now a Client and Buddy. Excellent platform and match of individuals.”</h5>
+                <h6>Tiffany Lim</h6>
+                <p>Client and Buddy</p>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ***** Testimonials Area End ***** -->
+
+{% endblock %}
+
