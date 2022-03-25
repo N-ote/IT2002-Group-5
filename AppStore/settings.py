@@ -102,11 +102,11 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': config('DB_NAME', default=None),
-            'USER': config('DB_USER', default=None),
-            'PASSWORD': config('DB_PASSWORD', default=None),
-            'HOST': config('DB_HOST', default=None),
-            'PORT': 5432
+            'NAME': 'IT2002',
+            'HOST': 'localhost',
+            'PORT': '5432',
+            'USER': 'postgres',
+            'PASSWORD': 'cjlee420'
         }
     }
 
@@ -147,7 +147,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
 
 django_heroku.settings(locals())
